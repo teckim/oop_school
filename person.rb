@@ -8,6 +8,7 @@ class Person
     @id = Random.rand(1..1000)
     @age = age
     @name = name
+    @parent_permission = parent_permission
   end
 
   def of_age?
@@ -15,6 +16,6 @@ class Person
   end
 
   def can_use_services?
-    slef.is_of_age? || @parent_permission
+    of_age? || @parent_permission
   end
 end
