@@ -2,7 +2,7 @@ require_relative 'decorators'
 
 class Person < Nameable
   attr_accessor :name, :age
-  attr_reader :id
+  attr_reader :id, :rentals
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()
@@ -27,8 +27,8 @@ class Person < Nameable
   end
 
   def add_rental(rental)
-    @rentals.push(rental)
-    @rental.person = self
+    @rentals << rental
+    rental.person = self
   end
 
   private :of_age?
