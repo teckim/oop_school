@@ -1,6 +1,5 @@
 # rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/CyclomaticComplexity
-
 require 'date'
 require_relative 'cli'
 require_relative 'app'
@@ -49,7 +48,7 @@ def create_person
     puts 'Teacher created successfully'
   when 2 # Student
     parent_permission = %w[y Y].include?(CLI.read_input('Has parent permission? [Y/N]'))
-    APP.add_person('student', age, name, parent_permission)
+    APP.add_person('student', age, name)
 
     puts 'Student created successfully'
   end
